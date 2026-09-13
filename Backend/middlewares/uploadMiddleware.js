@@ -11,7 +11,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
     cloudinary: cloudinary,
     params: {
-        folder: 'task-manager-avatars', // organizes uploads in your Cloudinary account
+        folder: 'task-manager-avatars',
         allowed_formats: ['jpeg', 'jpg', 'png'],
         public_id: (req, file) => `${Date.now()}-${file.originalname.split('.')[0]}`,
     },

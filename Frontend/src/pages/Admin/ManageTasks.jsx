@@ -24,7 +24,7 @@ const ManageTasks = () => {
         params: {
           status: filterStatus === "All" ? "" : filterStatus,
           page: currentPage,
-          limit: 9,
+          limit: 6,
         },
       });
       setAllTasks(response.data?.tasks?.length > 0 ? response.data.tasks : []);

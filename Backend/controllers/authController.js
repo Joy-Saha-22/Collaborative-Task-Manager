@@ -51,8 +51,12 @@ const loginUser = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: "Invalid Email or Password" });
         }
+        console.log("User found:", !!user);
+        console.log("Hash prefix:", user.password?.slice(0, 7));
+        console.log("Hash length:", user.password?.length);
         //compare password
         const isMatch = await bcrypt.compare(password, user.password);
+        console.log("Password comparison:", isMatch);
         if (!isMatch) {
             return res.status(401).json({ message: "Invalid Email or Password" });
         }
@@ -94,7 +98,7 @@ const updateUserProfile = async (req, res) => {
 
         if (req.body.password) {
             const salt = await bcrypt.genSalt(10);
-            user.password = await bycrpt.hash(req.body.password, salt);
+            user.password = await bcrypt.hash(req.body.password, salt);
         }
         const updatedUser = await user.save();
         res.json({

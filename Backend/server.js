@@ -25,7 +25,6 @@ app.use(
 
 connectDB();
 app.use(express.json());
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authLimiter, authRoutes);
 app.use("/api/users", generalLimiter, userRoutes);
 app.use("/api/tasks", generalLimiter, taskRoutes);

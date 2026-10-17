@@ -214,10 +214,6 @@ npm run lint
 - Set `VITE_API_URL` at frontend build time to the deployed backend base URL. The same base URL is used for REST and Socket.IO connections.
 - Avatar uploads use Cloudinary storage configured by the backend.
 
-## Known limitations
-- The member management screen lists users and task counts and supports report export; there are no registered API routes for creating or deleting users.
-- Task pagination is implemented by `GET /api/tasks`; the user-list route has no pagination parameters.
-
 ## Author
 
 - Joy Saha, [joysaha22.dev@gmail.com](https://mail.google.com/mail/?view=cm&to=joysaha22.dev@gmail.com) | [LinkedIn](https://www.linkedin.com/in/devjoysaha/)
